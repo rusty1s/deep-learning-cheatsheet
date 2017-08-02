@@ -29,6 +29,24 @@
 * [Graph image representation from convolutional neural networks](https://www.google.ch/patents/US9418458)
 * [Dynamic Graph Convolutional Networks](https://arxiv.org/pdf/1704.06199.pdf)
 
+### Propagation rules
+
+* **GCN (Graph Convolutional Network):**
+  * $\tilde{A} := A + I$
+  * $\tilde{D} := D + I$
+
+$$
+F_{out} := \tilde{D}^{-\frac{1}{2}} \tilde{A} \tilde{D}^{-\frac{1}{2}} F\_{in} W
+$$
+
+* **EGCNN (Embedded Graph Convolutional Neural Network):**
+  * B-Spline function $\mathrm{N}^K\_p$ with degree $K$
+  * $W \in \mathbb{R}^{(P+1) \times M\_{in} \times M\_{out}}$
+
+$$
+F_{out} := \tilde{D}^{-1}\_{dist} F\_{in} W\_{P+1} + \sum\_{p=0}^{P-1} \left( \mathrm{N}^K_p(A\_{rad}) \odot \left( \tilde{D}\_{dist}^{-\frac{1}{2}} \tilde{A}\_{dist} \tilde{D}^{-\frac{1}{2}}\_{dist} \right) \right) F\_{in} W\_{p+1}
+$$
+
 ## Spatial Approach
 
 * [Learning Convolutional Neural Networks for Graphs](https://arxiv.org/pdf/1605.05273.pdf) [[Slides](http://www.matlog.net/icml2016_slides.pdf)]
