@@ -36,6 +36,7 @@
   * $\overline{F}_0 := F\_{in} W_0$
   * $\overline{F}_1 := \tilde{L} F\_{in} W_1$
   * $\overline{F}_k := \left(2\tilde{L} \overline{F}\_{k-1} - \overline{F}\_{k-2} \right) W_k$
+  * $W \in \mathbb{R}^{(K+1) \times M\_{in} \times M\_{out}}$
 
 $$
 F_{out} := \sum\_{k=0}^K \overline{F}\_k
@@ -44,6 +45,7 @@ $$
 * **GCN (Graph Convolutional Network):**
   * $\tilde{A} := A + I$
   * $\tilde{D} := D + I$
+  * $W \in \mathbb{R}^{M\_{in} \times M\_{out}}$
 
 $$
 F_{out} := \tilde{D}^{-\frac{1}{2}} \tilde{A} \tilde{D}^{-\frac{1}{2}} F\_{in} W
