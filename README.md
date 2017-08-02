@@ -1,5 +1,7 @@
 # Deep Learning Cheatsheet
 
+General | [Graphs](graph.md)
+
 ## Introduction
 
 * [Neural Networks and Deep Learning](http://www.neuralnetworksanddeeplearning.com) [Free Online Book]
