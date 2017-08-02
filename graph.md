@@ -40,7 +40,8 @@ F_{out} := \tilde{D}^{-\frac{1}{2}} \tilde{A} \tilde{D}^{-\frac{1}{2}} F\_{in} W
 $$
 
 * **EGCNN (Embedded Graph Convolutional Neural Network):**
-  * B-Spline function $\mathrm{N}^K\_p$ with degree $K$
+  * Number of partitions $P$
+  * closed B-Spline function $\mathrm{N}^K\_p$ with degree $K$ and node vector $\tau := [\alpha_0, \ldots, \alpha_{P+K}]^{\top}$ with $\alpha_p := 2\pi p / P$
   * $W \in \mathbb{R}^{(P+1) \times M\_{in} \times M\_{out}}$
 
 $$
