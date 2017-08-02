@@ -5,6 +5,8 @@ General | [Graphs](graph.md)
 ## Introduction
 
 * [Neural Networks and Deep Learning](http://www.neuralnetworksanddeeplearning.com) [Free Online Book]
+* [Andrew Ng's machine learning course at Coursera](https://www.coursera.org/learn/machine-learning) [[Material](http://cs229.stanford.edu/materials.html)]
+* [Deep Learning by Google](https://www.udacity.com/course/deep-learning--ud730#)
 * [Deep Learning in Neural Networks: An Overview](https://arxiv.org/pdf/1404.7828.pdf)
 * [Awesome Deep Vision](https://www.github.com/kjw0612/awesome-deep-vision)
 * [A Guide to Deep Learning](http://yerevann.com/a-guide-to-deep-learning/?utm_campaign=Revue%20newsletter&utm_medium=Newsletter&utm_source=revue)
