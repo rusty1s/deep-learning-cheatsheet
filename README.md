@@ -42,6 +42,10 @@ General | [Graphs](graph.md)
 * [Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift](https://arxiv.org/pdf/1502.03167.pdf)
   * [Batch Normalization - What the hey?](https://gab41.lab41.org/batch-normalization-what-the-hey-d480039a9e3b) [Blog]
 
+## Recurrent Neural Networks
+
+* [The Unreasonable Effectiveness of Recurrent Neural Networks](http://karpathy.github.io/2015/05/21/rnn-effectiveness/)
+
 ## Image Datasets
 
 * [MNIST](http://yann.lecun.com/exdb/mnist/)
