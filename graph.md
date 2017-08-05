@@ -7,6 +7,9 @@
 * [How do I generalize convolution of neural networks to graphs?](https://www.quora.com/How-do-I-generalize-convolution-of-neural-networks-to-graphs) [Spatial vs. Spectral]
 * [Deep Learning on Graphs](https://figshare.com/articles/Deep_Learning_on_Graphs/4491686) [Slides]
 * [Gated Graph Sequence Neural Networks](https://arxiv.org/pdf/1511.05493.pdf)
+* [Geometric deep learning on graphs and manifolds using mixture model CNNs](https://arxiv.org/pdf/1611.08402.pdf)
+* [Geodesic convolutional neural networks on Riemannian manifolds](https://arxiv.org/pdf/1501.06297.pdf)
+* [Geometric deep learning on graphs](https://www.dropbox.com/s/4l6m32tg9yecvow/CVPR%20GDL.pdf?dl=0) [Slides (228MB)]
 
 ## Spectral Approach
 
