@@ -25,7 +25,7 @@
 * [Convolutional Neural Networks auf Graphrepräsentationen von Bildern](https://github.com/rusty1s/deep-learning-on-graphs/tree/master/masterthesis) [[Code](https://www.github.com/rusty1s/embedded_gcnn)]
 * [Spectral Networks and Deep Locally Connected Networks on Graphs](https://arxiv.org/pdf/1312.6203v3.pdf)
 * [Deep Convolutional Networks on Graph-Structured Data](https://arxiv.org/pdf/1506.05163.pdf)
-* [Convolutional Networks on Graphs for Learning Molecular Fingerprints](https://hips.seas.harvard.edu/files/duvenaud-graphs-nips-2015.pdf)
+* [Convolutional Networks on Graphs for Learning Molecular Fingerprints](https://hips.seas.harvard.edu/files/duvenaud-graphs-nips-2015.pdf) [node-degree specific weight matrices]
 * [Graph image representation from convolutional neural networks](https://www.google.ch/patents/US9418458)
 * [Dynamic Graph Convolutional Networks](https://arxiv.org/pdf/1704.06199.pdf)
 
