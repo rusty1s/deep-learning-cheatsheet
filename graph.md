@@ -25,6 +25,8 @@
 
 * [Convolutional Neural Networks on Graphs with Fast Localized Spectral Filtering](https://arxiv.org/pdf/1606.09375.pdf) [[Code](https://github.com/mdeff/cnn_graph)] [[Notebook](http://nbviewer.jupyter.org/github/mdeff/cnn_graph/blob/outputs/usage.ipynb)]
 * [Semi-Supervised Classification with Graph Convolutional Networks](https://arxiv.org/pdf/1609.02907v3.pdf) [[Code](https://github.com/tkipf/gcn)] [[Explanation](http://tkipf.github.io/graph-convolutional-networks/)] [[Criticism](http://www.inference.vc/how-powerful-are-graph-convolutions-review-of-kipf-welling-2016-2/)] [[Review](https://openreview.net/forum?id=SJU4ayYgl)]
+* [CayleyNets: Graph Convolutional Neural Networks with Complex Rational Spectral Filters](https://arxiv.org/pdf/1705.07664.pdf)
+* [Spectral Networks and Deep Locally Connected Networks on Graphs](https://arxiv.org/pdf/1312.6203.pdf)
 * [Convolutional Neural Networks auf Graphrepräsentationen von Bildern](https://github.com/rusty1s/deep-learning-on-graphs/tree/master/masterthesis) [[Code](https://www.github.com/rusty1s/embedded_gcnn)]
 * [Spectral Networks and Deep Locally Connected Networks on Graphs](https://arxiv.org/pdf/1312.6203v3.pdf)
 * [Deep Convolutional Networks on Graph-Structured Data](https://arxiv.org/pdf/1506.05163.pdf)
