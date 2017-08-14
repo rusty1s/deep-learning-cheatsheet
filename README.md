@@ -26,6 +26,7 @@ General | [Graphs](graph.md)
 * [Adding a New Op](https://www.tensorflow.org/extend/adding_an_op) [Official]
 * [TensorFlow in a Nutshell](http://camron.xyz)
 * [Source Code Examples](https://github.com/aymericdamien/TensorFlow-Examples)
+* [Effictive TensorFlow](https://github.com/vahidk/EffectiveTensorflow) [TensorFlow tutorials and best practices]
 
 ## Architectures
 
