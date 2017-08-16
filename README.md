@@ -13,6 +13,7 @@ General | [Graphs](graph.md)
 * [Deep Learning Weekly](http://www.deeplearningweekly.com) [Weekly Newsletter Subscription]
 * [A Year of Artificial Intelligence](https://ayearofai.com/) [Blog]
 * [Introduction to Convolutional Neural Networks](http://cs.nju.edu.cn/wujx/paper/CNN.pdf)
+* [Applied Deep Learning](https://medium.com/towards-data-science/applied-deep-learning-part-1-artificial-neural-networks-d7834f67a4f6)
 
 ## Python
 
