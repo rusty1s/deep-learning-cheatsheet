@@ -8,6 +8,7 @@ General | [Graphs](graph.md)
 * [Andrew Ng's machine learning course at Coursera](https://www.coursera.org/learn/machine-learning) [[Material](http://cs229.stanford.edu/materials.html)]
 * [Deep Learning by Google](https://www.udacity.com/course/deep-learning--ud730#)
 * [Deep Learning in Neural Networks: An Overview](https://arxiv.org/pdf/1404.7828.pdf)
+* [How To Become A Machine Learning Engineer: Learning Path](https://hackernoon.com/learning-path-for-machine-learning-engineer-a7d5dc9de4a4)
 * [Awesome Deep Vision](https://www.github.com/kjw0612/awesome-deep-vision)
 * [A Guide to Deep Learning](http://yerevann.com/a-guide-to-deep-learning/?utm_campaign=Revue%20newsletter&utm_medium=Newsletter&utm_source=revue)
 * [Deep Learning Weekly](http://www.deeplearningweekly.com) [Weekly Newsletter Subscription]
