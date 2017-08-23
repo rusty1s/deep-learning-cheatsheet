@@ -16,6 +16,7 @@ General | [Graphs](graph.md)
 * [A Year of Artificial Intelligence](https://ayearofai.com/) [Blog]
 * [Introduction to Convolutional Neural Networks](http://cs.nju.edu.cn/wujx/paper/CNN.pdf)
 * [Applied Deep Learning](https://medium.com/towards-data-science/applied-deep-learning-part-1-artificial-neural-networks-d7834f67a4f6)
+* [Machine Learning is Fun!](https://medium.com/@ageitgey/machine-learning-is-fun-80ea3ec3c471) [Medium Series]
 
 ## Python
 
@@ -36,6 +37,7 @@ General | [Graphs](graph.md)
 * [Very Deep Convolutional Networks for Large-Scale Image Recognition](https://arxiv.org/pdf/1409.1556v6.pdf) [VGG]
 * [SqueezeNet: AlexNet-level accuracy with 50x fewer parameters and 0.5MB model size](https://arxiv.org/pdf/1602.07360.pdf)
 * [Spatial Pyramid Pooling in Deep Convolutional Networks for Visual Recognition](https://arxiv.org/pdf/1406.4729.pdf)
+* [Genrative Adversarial Networks (GANs): Engine and Applications](https://blog.statsbot.co/generative-adversarial-networks-gans-engine-and-applications-f96291965b47)
 
 ## Optimizer
 
