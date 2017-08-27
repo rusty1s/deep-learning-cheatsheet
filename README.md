@@ -17,6 +17,7 @@ General | [Graphs](graph.md)
 * [Introduction to Convolutional Neural Networks](http://cs.nju.edu.cn/wujx/paper/CNN.pdf)
 * [Applied Deep Learning](https://medium.com/towards-data-science/applied-deep-learning-part-1-artificial-neural-networks-d7834f67a4f6)
 * [Machine Learning is Fun!](https://medium.com/@ageitgey/machine-learning-is-fun-80ea3ec3c471) [Medium Series]
+* [Machine Learning for Humans](https://medium.com/machine-learning-for-humans) [Medium Series]
 
 ## Python
 
