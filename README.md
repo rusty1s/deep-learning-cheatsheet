@@ -22,6 +22,7 @@ General | [Graphs](graph.md)
 ## Python
 
 * [Learn Python the hard way](https://learnpythonthehardway.org/book/)
+* [Python Data Science Handbook](https://jakevdp.github.io/PythonDataScienceHandbook/)
 * [Styleguide](https://www.python.org/dev/peps/pep-0008/) [PEP8]
 * [TensorFlow](https://www.tensorflow.org) [Open Source Library]
 * [PyCUDA](https://mathema.tician.de/software/pycuda/)
