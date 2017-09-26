@@ -60,7 +60,11 @@ General | [Graphs](graph.md)
 
 * [The Unreasonable Effectiveness of Recurrent Neural Networks](http://karpathy.github.io/2015/05/21/rnn-effectiveness/)
 
-## Image Datasets
+## Datasets
+
+* [Overview](http://deeplearning.net/datasets/)
+
+### Images
 
 * [MNIST](http://yann.lecun.com/exdb/mnist/)
 * [CIFAR-10/100](http://www.cs.toronto.edu/%7Ekriz/cifar.html)
