@@ -73,6 +73,7 @@ General | [Graphs](graph.md)
 * [ImageNet](http://image-net.org/)
   * [ILSVRC2014](http://image-net.org/challenges/LSVRC/2014/download-images-5jj5.php)
 * [Pascal VOC](http://host.robots.ox.ac.uk/pascal/VOC/)
+* [Animals with Attributes](https://cvml.ist.ac.at/AwA2/)
 
 ## Classification
 
