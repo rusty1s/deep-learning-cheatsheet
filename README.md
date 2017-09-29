@@ -5,6 +5,7 @@ General | [Graphs](graph.md)
 ## Introduction
 
 * [Machine Learning Glossary](https://developers.google.com/machine-learning/glossary/)
+* [Essential Machine Learning Cheatsheets](https://github.com/kailashahirwar/cheatsheets-ai)
 * [Neural Networks and Deep Learning](http://www.neuralnetworksanddeeplearning.com) [Free Online Book]
 * [Free Deep Learning Book](http://www.datasciencecentral.com/profiles/blogs/free-deep-learning-book-mit-press) [MIT Press]
 * [Andrew Ng's machine learning course at Coursera](https://www.coursera.org/learn/machine-learning) [[Material](http://cs229.stanford.edu/materials.html)]
