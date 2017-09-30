@@ -30,14 +30,20 @@ General | [Graphs](graph.md)
 * [Styleguide](https://www.python.org/dev/peps/pep-0008/) [PEP8]
 * [TensorFlow](https://www.tensorflow.org) [Open Source Library]
 * [PyCUDA](https://mathema.tician.de/software/pycuda/)
+* [Cython]()
+  * [Pure Python Mode](http://cython.readthedocs.io/en/latest/src/tutorial/pure.html)
 
-### TensorFlow Tutorials
+### TensorFlow
 
 * [Official](https://www.tensorflow.org/versions/r0.11/tutorials/index.html)
 * [Adding a New Op](https://www.tensorflow.org/extend/adding_an_op) [Official]
 * [TensorFlow in a Nutshell](http://camron.xyz)
 * [Source Code Examples](https://github.com/aymericdamien/TensorFlow-Examples)
 * [Effictive TensorFlow](https://github.com/vahidk/EffectiveTensorflow) [TensorFlow tutorials and best practices]
+
+### PyTorch
+
+* [Official]()
 
 ## Architectures
 
