@@ -1,0 +1,38 @@
+\documentclass[pdftex,10pt,a4paper]{scrartcl}
+
+\usepackage[a4paper,left=2.5cm,right=2.5cm,bottom=3cm,top=3cm]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{url}
+\parindent=0cm
+
+\begin{document}
+
+\section{Preliminaries}
+
+$\mathcal{G} = (\mathcal{V}, \mathcal{E})$ \emph{weighted graph}, $\mathcal{V} = \{1, \ldots, n\}$ and $\mathcal{E} \subseteq \mathcal{V} \times \mathcal{V}$, with weights $a_i > 0$ for each node $i \in \mathcal{V}$ and $w_{i,j} \geq 0$ for each node pair $(i, j) \in \mathcal{V} \times \mathcal{V}$ restricted by $w_{i,j} > 0$ iff $(i, j) \in \mathcal{E}$.
+$\mathcal{G}$ is called \emph{undirected} iff $w_{i,j} = w_{j,i}$ for all $i,j \in \mathcal{V}$.
+$\mathcal{G}$ is called \emph{loopless??}
+$\mathcal{G}$ implies an \emph{adjacency matrix} $\mathbf{W} = \left( w_{i,j} \right)$.
+
+The \emph{unnormalized Laplacian} of an undirected graph without self-loops is a $n \times n$ symmetric positive-semidefinite matrix $\mathbf{L} = \mathbf{D} - \mathbf{W}$, where $\mathbf{D} = \mathrm{diag}\left( \sum_{i \in \mathcal{V}} w_{i,j}\right)$.
+The \emph{normalized Laplacian}
+
+$\mathcal{N}(i)$
+
+A \emph{signal} $f \colon \mathcal{V} \to \mathbb{R}^m$ respectively $\mathbf{f} \in \mathbb{R}^m$
+
+Let $\mathbf{u} \colon \mathcal{V} \times \mathcal{V} \to \mathbb{R}^d$ define a $d$-dimensional vector of \emph{pseudo-coordinates}, e.g.\ the vector from $i$ to $j$ in euclidean space $\mathbf{u}(i,j) = \mathbf{p}(j) - \mathbf{p}(i)$ with \emph{graph embeddings} $\mathbf{p} \colon \mathcal{V} \to \mathbb{R}^d$
+
+\section{Convolutions}
+
+\paragraph{MoNet}
+
+\begin{equation*}
+  (\mathbf{f} \star \mathbf{g})(i) = \sum_{j \in \mathcal{V}}
+\end{equation*}
+
+
+
+awdawd
+
+\end{document}
