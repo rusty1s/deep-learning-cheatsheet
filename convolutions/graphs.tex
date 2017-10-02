@@ -3,6 +3,7 @@
 \usepackage[a4paper,left=2.5cm,right=2.5cm,bottom=3cm,top=3cm]{geometry}
 \usepackage{amsmath,amssymb,amsthm}
 \usepackage{url}
+\usepackage[numbers,sort]{natbib}
 \parindent=0cm
 
 \title{Graph Convolutions}
@@ -17,7 +18,7 @@
 Let $\mathcal{G} = (\mathcal{V}, \mathcal{E})$ be a \emph{weighted graph}, $\mathcal{V} = \{1, \ldots, n\}$ and $\mathcal{E} \subseteq \mathcal{V} \times \mathcal{V}$, with weights $a_i > 0$ for each node $i \in \mathcal{V}$ and $w_{i,j} \geq 0$ for each node pair $(i, j) \in \mathcal{V} \times \mathcal{V}$, whereas $w_{i,j} > 0$ iff $(i, j) \in \mathcal{E}$.
 $\mathcal{G}$ is called \emph{undirected} iff $w_{i,j} = w_{j,i}$ for all $i,j \in \mathcal{V}$.
 $\mathcal{G}$ is without \emph{self-loops} iff $w_{i,i} = 0$.
-$\mathcal{G}$ implies an \emph{adjacency matrix} $\mathbf{W} = \left( w_{i,j} \right)$, whereas $\mathbf{W}$ is mostly sparse with $|\mathcal{E}| \ll n$ entries.
+Furthermore, $\mathcal{G}$ implies an \emph{adjacency matrix} $\mathbf{W} = \left( w_{i,j} \right)$, whereas $\mathbf{W}$ is mostly \emph{sparse} with $|\mathcal{E}| \ll n$ entries.
 \\\\
 The \emph{unnormalized Laplacian} of an weighted undirected graph without self-loops is a $n \times n$ symmetric positive-semidefinite matrix $\mathbf{L} = \mathbf{D} - \mathbf{W}$, where $\mathbf{D} = \mathrm{diag}\left( \sum_{i \in \mathcal{V}} w_{i,j}\right)$.
 The \emph{normalized Laplacian}
@@ -27,6 +28,7 @@ $\mathcal{N}(i)$
 A \emph{signal} $f \colon \mathcal{V} \to \mathbb{R}^m$ respectively $\mathbf{f} \in \mathbb{R}^m$
 
 Let $\mathbf{u} \colon \mathcal{V} \times \mathcal{V} \to \mathbb{R}^d$ define a $d$-dimensional vector of \emph{pseudo-coordinates}, e.g.\ the vector from $i$ to $j$ in euclidean space $\mathbf{u}(i,j) = \mathbf{p}(j) - \mathbf{p}(i)$ with \emph{graph embeddings} $\mathbf{p} \colon \mathcal{V} \to \mathbb{R}^d$
+\cite{Bronstein2017}
 
 \section{Convolutions}
 
@@ -37,7 +39,9 @@ Let $\mathbf{u} \colon \mathcal{V} \times \mathcal{V} \to \mathbb{R}^d$ define a
 \end{equation*}
 
 
-
 awdawd
+
+\bibliographystyle{plain}
+\bibliography{bibliography}
 
 \end{document}
