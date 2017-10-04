@@ -1,0 +1,56 @@
+\documentclass[pdftex,10pt,a4paper]{scrartcl}
+
+\usepackage[a4paper,left=2.5cm,right=2.5cm,bottom=3cm,top=3cm]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{url}
+\usepackage[numbers,sort]{natbib}
+\parindent=0cm
+
+\title{Graph Autoencoders}
+\date{\vspace{-5ex}}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+
+An autoencoder consists of 3 components: \emph{encoder} $f(x)$, \emph{code} $h$, \emph{decoder} $g(h)$.
+The autoenconder compresses the input and produces the code $h = f(x)$, the endocer then reconstructs the input only using this code, so that $g(f(x)) \approx x$.
+The learning process is described simply as minimizing a loss function
+\begin{equation*}
+  L(x, g(f(x))),
+\end{equation*}
+where $L$ is a loss function penalizing $g(f(x))$ for being dissimilar from $x$ (e.g.\ mean squared error).
+\\\\
+Autoencoders are mainly a dimensionality reduction (or compression) algorithm.
+
+\begin{itemize}
+  \item \textbf{Data-specific:} Autoencoders are only able to meaningfully compress data similiar to what they have been trained on
+  \item \textbf{Lossy:} The output of the autoencoder will not be exactly the same as the input
+  \item \textbf{Unsupervised:} Autoencoders are considered an \emph{unsupervised learning} technique since they don't need explicit labels to train on.
+\end{itemize}
+
+\section{Why?}
+
+\paragraph{Obtaining useful properties}
+
+Copying the input to the output may sound useless, but we are typically not intereset in the output of the decoder.
+Instead, we hope that training the autoencoder to perform the input copying task will result in the code taking on useful properties.
+
+\paragraph{Denoising Autoencoders}
+
+A \emph{denoising autoencoder} (DAE) instead minimizes
+\begin{equation*}
+  L(x, g(f(\tilde{x})))
+\end{equation*}
+where $\tilde{x}$ is a copy of $x$ that has been corrupted by some form of noise.
+Denoising autoencoders must therefore undo this operation rather than simply copying their input.
+
+\section{Convolutional Autoencoders}
+
+Both the encoder and decoder are usually fully-connected feedforward neural networks and therefore ignore the 2D image or graph structure.
+\emph{Convolutional Autoencoders} (CAE) differ from conventional autoencoders as their weights are shared among all locations in the input, preserving spatial locality.
+
+
+\end{document}

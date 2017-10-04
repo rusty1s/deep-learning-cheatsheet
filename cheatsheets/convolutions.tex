@@ -51,10 +51,17 @@ MoNet~\cite{Monti2016} suggests the use of a weighted \emph{gaussian kernel}
 
 with the diagonal covariance matrix $\mathrm{diag}(\mathbf{\sigma}_k) \in \mathbb{R}^{d \times d}$ and mean vector $\mathbf{\mu}_k \in \mathbb{R}^d$, which results in $2Kd$ learnable parameters for the patch operator.
 
-For arbitary graphs one can choose the pesudo-coordinates to use the degrees of the nodes $\mathbf{u}(i,j) = \left( \tfrac{1}{\sqrt{D_{ii}}}, \tfrac{1}{\sqrt{D_{jj}}} \right)$, whereas for graph embeddings one can take the polar coordinates $\mathbf{u} = (r, \varphi)$ or $\mathbf{u} = (r, \varphi, \theta)$.
+For arbitary graphs one can choose the pesudo-coordinates to use the degrees of the nodes $\mathbf{u}(i,j) = \left( \tfrac{1}{\sqrt{D_{ii}}}, \tfrac{1}{\sqrt{D_{jj}}} \right)$, whereas for graph embeddings one can take the polar coordinates $\mathbf{u} = (\rho, \varphi)$ or $\mathbf{u} = (r, \varphi, \theta)$.
 Graph embeddings are therefore parametrized by angle and length.
 
 \paragraph{SplineNet}
+
+We choose a different weighting function based on B-Splines to make use of \emph{local controllability}.
+For 2D this draws a cylinder.
+
+\begin{equation*}
+  \mathbf{b}(r, \varphi) =
+\end{equation*}
 
 
 
