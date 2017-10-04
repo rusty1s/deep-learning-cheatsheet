@@ -7,7 +7,7 @@
 * [How do I generalize convolution of neural networks to graphs?](https://www.quora.com/How-do-I-generalize-convolution-of-neural-networks-to-graphs) [Spatial vs. Spectral]
 * [Deep Learning on Graphs](https://figshare.com/articles/Deep_Learning_on_Graphs/4491686) [Slides]
 * [Gated Graph Sequence Neural Networks](https://arxiv.org/pdf/1511.05493.pdf)
-* [SchNet: A continuous-filter convolutional neural network for modeling quantum interactions](<BS>https://arxiv.org/pdf/1706.08566.pdf) (NIPS 2017)
+* [SchNet: A continuous-filter convolutional neural network for modeling quantum interactions](https://arxiv.org/pdf/1706.08566.pdf) (NIPS 2017)
 
 ## Geometric Deep Learning
 
@@ -18,8 +18,6 @@
 * [Geometric deep learning on graphs](https://www.dropbox.com/s/4l6m32tg9yecvow/CVPR%20GDL.pdf?dl=0) [Slides (228MB)]
 
 ## Spectral Approach
-
-### Introduction
 
 * [Spectral Graph Theory](http://www.math.ucsd.edu/~fan/research/revised.html)
 * [Wavelets on Graphs via Spectral Graph Theory](https://arxiv.org/pdf/0912.3848.pdf)
