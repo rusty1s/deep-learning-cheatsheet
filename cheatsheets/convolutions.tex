@@ -3,6 +3,7 @@
 \usepackage[a4paper,left=2.5cm,right=2.5cm,bottom=3cm,top=3cm]{geometry}
 \usepackage{amsmath,amssymb,amsthm}
 \usepackage{url}
+\usepackage{todonotes}
 \usepackage[numbers,sort]{natbib}
 \parindent=0cm
 
@@ -15,12 +16,13 @@
 
 \section{Preliminaries}
 
-Let $\mathcal{G} = (\mathcal{V}, \mathcal{E})$ be a \emph{weighted graph}, $\mathcal{V} = \{1, \ldots, n\}$ and $\mathcal{E} \subseteq \mathcal{V} \times \mathcal{V}$, with weights $a_i > 0$ for each node $i \in \mathcal{V}$ and $w_{i,j} \geq 0$ for each node pair $(i, j) \in \mathcal{V} \times \mathcal{V}$, whereas $w_{i,j} > 0$ iff $(i, j) \in \mathcal{E}$.
-$\mathcal{G}$ is called \emph{undirected} iff $w_{i,j} = w_{j,i}$ for all $i,j \in \mathcal{V}$.
-$\mathcal{G}$ is without \emph{self-loops} iff $w_{i,i} = 0$.
-Furthermore, $\mathcal{G}$ implies an \emph{adjacency matrix} $\mathbf{W} = \left( w_{i,j} \right)$, whereas $\mathbf{W}$ is mostly \emph{sparse} with $|\mathcal{E}| \ll n^2$ entries.
+Let $\mathcal{G} = (\mathcal{V}, \mathcal{E})$ be a \emph{weighted graph} with $\mathcal{V} = \{1, \ldots, n\}$ and $\mathcal{E} \subseteq \mathcal{V} \times \mathcal{V}$.
+Additionally, there exists an \emph{adjacency matrix} $\mathbf{W} \in \mathbb{R}^{n \times n}$, where $W_{ij} > 0$ iff $(i, j) \in \mathcal{E}$ and $W_{ij} = 0$ iff $(i, j) \not\in \mathcal{E}$.
+Note that $\mathbf{W}$ is usually \emph{sparse} with $|\mathcal{E}| \ll n^2$ entries.
+$\mathcal{G}$ is called \emph{undirected} iff $W_{ij} = W_{ji}$ for all $i,j \in \mathcal{V}$ and is called \emph{without self-loops} iff $W_{ii} = 0$ for all $i \in \mathcal{V}$.
 \\\\
-The \emph{unnormalized Laplacian} of an weighted undirected graph without self-loops is a $n \times n$ symmetric positive-semidefinite matrix $\mathbf{L} = \mathbf{D} - \mathbf{W}$, where $\mathbf{D} = \mathrm{diag}\left( \sum_{i \in \mathcal{V}} w_{i,j}\right)$. (wrong syntax)
+
+The \emph{unnormalized Laplacian} of an weighted undirected graph without self-loops is a $n \times n$ symmetric positive-semidefinite matrix $\mathbf{L} = \mathbf{D} - \mathbf{W}$, where $\mathbf{D} = \mathrm{diag}\left( \sum_{i \in \mathcal{V}} w_{ij}\right)$. (wrong syntax)
 The \emph{normalized Laplacian}
 
 $\mathcal{N}(i)$
@@ -55,11 +57,39 @@ For arbitary graphs one can choose the pseudo-coordinates to use the degrees of 
 
 \paragraph{SplineNet}
 
-We choose a different weighting function based on B-Splines to make use of \emph{local controllable} filters and to reduce computation significantly:
+Let $\xi = (t_0, \ldots, t_)$ be a node vector.
+An \emph{open b-spline-function} $N_k^m$ over $k \in \{ 1, \ldots, K \}$ is recursively defined by
+\begin{equation*}
+  N_k^0(t) = \begin{cases}
+    1 & \text{if } t \in [t_k, t_{k+1})\\
+    0 & \text{else}
+  \end{cases}
+\end{equation*}
+
+A \emph{closed b-spline-function}
+
+We choose a different weighting function based on b-splines to make use of \emph{local controllable} filters and to reduce computation significantly~\cite{Fey2017}:
 \begin{equation*}
   w_k(\rho, \varphi) = \mu_k \rho \bar{N}_k^m(\varphi)
 \end{equation*}
-with $\boldsymbol{\mu} = (\mu_1, \ldots, \mu_K )$ learnable parameters where $\bar{N}_k^m$ is a closed B-Spline-function of degree $m \in \mathbb{N}$ over the interval $[0, 2\pi]$.
+with $\boldsymbol{\mu} = (\mu_1, \ldots, \mu_K )$ learnable parameters where $\bar{N}_k^m$ is a closed b-spline-function of degree $m \in \mathbb{N}$ with uniform node vector over the interval $[0, 2\pi]$.
+
+We can also use the Tensorproduktkonstruktion to also parametrize the distances via
+\begin{equation*}
+  w_{kl}(\rho, \varphi) = \mu_{kl} N_k^m(\rho) \bar{N}_l^m(\varphi)
+\end{equation*}
+where we combine open and closed b-spline functions.
+
+To modify it to the 3-dimenional space, one can use the polar coordinates $(\rho, \varphi, \theta)$ to
+\begin{equation*}
+  w_{klq}(\rho, \varphi, \theta) = \mu_{klm} N_k^m(\rho) \bar{N}_l^m(\varphi) \bar{N}_q^m(\theta)
+\end{equation*}
+
+The good thing is the runtime.
+Whereas MoNet has a runtime dependent on $K$, which is typical the dominant factor between $d$ and $K$, this method is mostly dependent on $M$, which is typical low ($1$ or $2$).
+
+
+
 
 
 
@@ -67,12 +97,7 @@ with $\boldsymbol{\mu} = (\mu_1, \ldots, \mu_K )$ learnable parameters where $\b
 
 
 \begin{itemize}
-  \item Erweiterung auf 3D
   \item Insbesondere Gradienten beschreiben
-\end{itemize}
-
-\begin{itemize}
-  \item only parametrized by degree
 \end{itemize}
 
 \bibliographystyle{plain}
