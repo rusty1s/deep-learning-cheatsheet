@@ -55,11 +55,12 @@ For arbitary graphs one can choose the pseudo-coordinates to use the degrees of 
 
 \paragraph{SplineNet}
 
-We choose a different weighting function based on B-Splines to make use of \emph{local controllable} filters.
-
+We choose a different weighting function based on B-Splines to make use of \emph{local controllable} filters and to reduce computation significantly:
 \begin{equation*}
-  w_k(\rho, \varphi) = \rho N_k^K(\varphi)
+  w_k(\rho, \varphi) = \mu_k \rho \bar{N}_k^m(\varphi)
 \end{equation*}
+with $\boldsymbol{\mu} = (\mu_1, \ldots, \mu_K )$ learnable parameters where $\bar{N}_k^m$ is a closed B-Spline-function of degree $m \in \mathbb{N}$ over the interval $[0, 2\pi]$.
+
 
 
 
