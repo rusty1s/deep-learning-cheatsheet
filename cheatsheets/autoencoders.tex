@@ -38,7 +38,7 @@ Autoencoders are mainly a dimensionality reduction (or compression) algorithm.
 Copying the input to the output may sound useless, but we are typically not intereset in the output of the decoder.
 Instead, we hope that training the autoencoder to perform the input copying task will result in the code taking on useful properties.
 
-\paragraph{Denoising Autoencoders}
+\paragraph{Denoising autoencoders}
 
 A \emph{denoising autoencoder} (DAE) instead minimizes
 \begin{equation*}
@@ -47,10 +47,11 @@ A \emph{denoising autoencoder} (DAE) instead minimizes
 where $\tilde{x}$ is a copy of $x$ that has been corrupted by some form of noise.
 Denoising autoencoders must therefore undo this operation rather than simply copying their input.
 
-\section{Convolutional Autoencoders}
+\section{Convolutional autoencoders}
 
 Both the encoder and decoder are usually fully-connected feedforward neural networks and therefore ignore the 2D image or graph structure.
-\emph{Convolutional Autoencoders} (CAE) differ from conventional autoencoders as their weights are shared among all locations in the input, preserving spatial locality.
-
+\emph{Convolutional autoencoders} (CAE) differ from conventional autoencoders as their weights are shared among all locations in the input, preserving spatial locality.
+Therefore, a convolutional autoencoder needs a way to deconvolute and unpool a convolution respectively pooling operation.
+The definition of convolutional autoencoders is relative straightforward on regular grids, but needs several adjustments and generalizations for non-euclidean domains.
 
 \end{document}
