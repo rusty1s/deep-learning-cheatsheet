@@ -33,33 +33,41 @@ e.g.\ the vector from $i$ to $j$ in euclidean space $\mathbf{u}(i,j) = \mathbf{p
 
 \section{Convolutions}
 
-\paragraph{MoNet} MoNet~\cite{Monti2016}
+\paragraph{MoNet}
 
-\emph{patch operator} for a specific $k \in \{ 1, \ldots, K \}$
+MoNet~\cite{Monti2016} uses the generic \emph{patch operator} for a specific $k \in \{ 1, \ldots, K \}$
 \begin{equation*}
   D_k(i)f = \sum_{j \in \mathcal{N}(i)} w_k(\mathbf{u}(i, j)) f(j)
 \end{equation*}
-
+for the spatial definition of a convolution on a graph or manifold signal $f \colon \mathcal{V} \to \mathbb{R}$ respectively $\mathbf{f} \in \mathbb{R}^n$
 \begin{equation*}
   (\mathbf{f} \star \mathbf{g})(i) = \sum_k^K D_k(i)f
 \end{equation*}
-where $K \in \mathbb{N}$ is the dimensionality of the extracted patch and $\mathbf{w}(\mathbf{u}) = (w_1(\mathbf{u}), \ldots, w_K(\mathbf{u}))$ is a weighting function parametrized by some learnable parameters.
-\\\\
-MoNet~\cite{Monti2016} suggests the use of a \emph{gaussian kernel}
+where $K \in \mathbb{N}$ is the dimensionality of the extracted patch and $\mathbf{w}(\mathbf{u}) \in \mathbb{R}^K$ with $\mathbf{w}(\mathbf{u}) = (w_1(\mathbf{u}), \ldots, w_K(\mathbf{u}))$ is a weighting function parametrized by some learnable parameters.
+MoNet~\cite{Monti2016} suggests the use of a weighted \emph{gaussian kernel}
 \begin{equation*}
   w_k(\mathbf{u}) = \exp \left(-\frac{1}{2} {(\mathbf{u} - \mathbf{\mu}_k)}^{\top} {\mathrm{diag}(\mathbf{\sigma}_k)}^{-1} (\mathbf{\mu}_k - \mathbf{u}) \right)
 \end{equation*}
 
-as weighting functions with a diagonal covariance matrix $\mathrm{diag}(\mathbf{\sigma}_k) \in \mathbb{R}^{d \times d}$ and mean vector $\mathbf{\mu}_k \in \mathbb{R}^d$ which results in $2Kd$ learnable parameters for the patch operator.
+with the diagonal covariance matrix $\mathrm{diag}(\mathbf{\sigma}_k) \in \mathbb{R}^{d \times d}$ and mean vector $\mathbf{\mu}_k \in \mathbb{R}^d$, which results in $2Kd$ learnable parameters for the patch operator.
 
-Advantages in domain-dependent choice of weighting function
+For arbitary graphs one can choose the pesudo-coordinates to use the degrees of the nodes $\mathbf{u}(i,j) = \left( \tfrac{1}{\sqrt{D_{ii}}}, \tfrac{1}{\sqrt{D_{jj}}} \right)$, whereas for graph embeddings one can take the polar coordinates $\mathbf{u} = (r, \varphi)$ or $\mathbf{u} = (r, \varphi, \theta)$.
+Graph embeddings are therefore parametrized by angle and length.
 
 \paragraph{SplineNet}
+
+
+
+
 
 \begin{itemize}
   \item define with polar coordinates
   \item Erweiterung auf 3D
   \item Insbesondere Gradienten beschreiben
+\end{itemize}
+
+\begin{itemize}
+  \item only parametrized by degree
 \end{itemize}
 
 \bibliographystyle{plain}
