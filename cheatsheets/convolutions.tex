@@ -46,21 +46,19 @@ for the spatial definition of a convolution on a graph or manifold signal $f \co
 where $K \in \mathbb{N}$ is the dimensionality of the extracted patch and $\mathbf{w}(\mathbf{u}) \in \mathbb{R}^K$ with $\mathbf{w}(\mathbf{u}) = (w_1(\mathbf{u}), \ldots, w_K(\mathbf{u}))$ is a weighting function parametrized by some learnable parameters.
 MoNet~\cite{Monti2016} suggests the use of a weighted \emph{gaussian kernel}
 \begin{equation*}
-  w_k(\mathbf{u}) = \exp \left(-\frac{1}{2} {(\mathbf{u} - \mathbf{\mu}_k)}^{\top} {\mathrm{diag}(\mathbf{\sigma}_k)}^{-1} (\mathbf{\mu}_k - \mathbf{u}) \right)
+  w_k(\mathbf{u}) = \exp \left(-\frac{1}{2} {(\mathbf{u} - \boldsymbol{\mu}_k)}^{\top} {\mathrm{diag}(\boldsymbol{\sigma}_k)}^{-1} (\mathbf{u} - \boldsymbol{\mu}_k) \right)
 \end{equation*}
 
-with the diagonal covariance matrix $\mathrm{diag}(\mathbf{\sigma}_k) \in \mathbb{R}^{d \times d}$ and mean vector $\mathbf{\mu}_k \in \mathbb{R}^d$, which results in $2Kd$ learnable parameters for the patch operator.
+with the diagonal covariance matrix $\mathrm{diag}(\boldsymbol{\sigma}_k) \in \mathbb{R}^{d \times d}$ and mean vector $\boldsymbol{\mu}_k \in \mathbb{R}^d$, which results in $2Kd$ learnable parameters for the patch operator.
 
-For arbitary graphs one can choose the pesudo-coordinates to use the degrees of the nodes $\mathbf{u}(i,j) = \left( \tfrac{1}{\sqrt{D_{ii}}}, \tfrac{1}{\sqrt{D_{jj}}} \right)$, whereas for graph embeddings one can take the polar coordinates $\mathbf{u} = (\rho, \varphi)$ or $\mathbf{u} = (r, \varphi, \theta)$.
-Graph embeddings are therefore parametrized by angle and length.
+For arbitary graphs one can choose the pseudo-coordinates to use the degrees of the nodes $\mathbf{u}(i,j) = \left( \tfrac{1}{\sqrt{D_{ii}}}, \tfrac{1}{\sqrt{D_{jj}}} \right)$, whereas one can take the polar coordinates $\mathbf{u} = (\rho, \varphi)$ or $\mathbf{u} = (r, \varphi, \theta)$ for 2D respectively 3d graph embeddings like discrete manifolds.
 
 \paragraph{SplineNet}
 
-We choose a different weighting function based on B-Splines to make use of \emph{local controllability}.
-For 2D this draws a cylinder.
+We choose a different weighting function based on B-Splines to make use of \emph{local controllable} filters.
 
 \begin{equation*}
-  \mathbf{b}(r, \varphi) =
+  w_k(\rho, \varphi) = \rho N_k^K(\varphi)
 \end{equation*}
 
 
@@ -68,7 +66,6 @@ For 2D this draws a cylinder.
 
 
 \begin{itemize}
-  \item define with polar coordinates
   \item Erweiterung auf 3D
   \item Insbesondere Gradienten beschreiben
 \end{itemize}
