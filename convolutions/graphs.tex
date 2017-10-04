@@ -18,28 +18,49 @@
 Let $\mathcal{G} = (\mathcal{V}, \mathcal{E})$ be a \emph{weighted graph}, $\mathcal{V} = \{1, \ldots, n\}$ and $\mathcal{E} \subseteq \mathcal{V} \times \mathcal{V}$, with weights $a_i > 0$ for each node $i \in \mathcal{V}$ and $w_{i,j} \geq 0$ for each node pair $(i, j) \in \mathcal{V} \times \mathcal{V}$, whereas $w_{i,j} > 0$ iff $(i, j) \in \mathcal{E}$.
 $\mathcal{G}$ is called \emph{undirected} iff $w_{i,j} = w_{j,i}$ for all $i,j \in \mathcal{V}$.
 $\mathcal{G}$ is without \emph{self-loops} iff $w_{i,i} = 0$.
-Furthermore, $\mathcal{G}$ implies an \emph{adjacency matrix} $\mathbf{W} = \left( w_{i,j} \right)$, whereas $\mathbf{W}$ is mostly \emph{sparse} with $|\mathcal{E}| \ll n$ entries.
+Furthermore, $\mathcal{G}$ implies an \emph{adjacency matrix} $\mathbf{W} = \left( w_{i,j} \right)$, whereas $\mathbf{W}$ is mostly \emph{sparse} with $|\mathcal{E}| \ll n^2$ entries.
 \\\\
-The \emph{unnormalized Laplacian} of an weighted undirected graph without self-loops is a $n \times n$ symmetric positive-semidefinite matrix $\mathbf{L} = \mathbf{D} - \mathbf{W}$, where $\mathbf{D} = \mathrm{diag}\left( \sum_{i \in \mathcal{V}} w_{i,j}\right)$.
+The \emph{unnormalized Laplacian} of an weighted undirected graph without self-loops is a $n \times n$ symmetric positive-semidefinite matrix $\mathbf{L} = \mathbf{D} - \mathbf{W}$, where $\mathbf{D} = \mathrm{diag}\left( \sum_{i \in \mathcal{V}} w_{i,j}\right)$. (wrong syntax)
 The \emph{normalized Laplacian}
 
 $\mathcal{N}(i)$
 
-A \emph{signal} $f \colon \mathcal{V} \to \mathbb{R}^m$ respectively $\mathbf{f} \in \mathbb{R}^m$
+A \emph{signal} $f \colon \mathcal{V} \to \mathbb{R}^m$ respectively $\mathbf{F} \in \mathbb{R}^{n \times m}$
 
-Let $\mathbf{u} \colon \mathcal{V} \times \mathcal{V} \to \mathbb{R}^d$ define a $d$-dimensional vector of \emph{pseudo-coordinates}, e.g.\ the vector from $i$ to $j$ in euclidean space $\mathbf{u}(i,j) = \mathbf{p}(j) - \mathbf{p}(i)$ with \emph{graph embeddings} $\mathbf{p} \colon \mathcal{V} \to \mathbb{R}^d$
+Let $\mathbf{u} \colon \mathcal{V} \times \mathcal{V} \to \mathbb{R}^d$ define a $d$-dimensional vector of \emph{pseudo-coordinates}
+e.g.\ the vector from $i$ to $j$ in euclidean space $\mathbf{u}(i,j) = \mathbf{p}(j) - \mathbf{p}(i)$ with \emph{graph embeddings} $\mathbf{p} \colon \mathcal{V} \to \mathbb{R}^d$
 \cite{Bronstein2017}
 
 \section{Convolutions}
 
-\paragraph{MoNet} Monet~\cite{Monti2016}
+\paragraph{MoNet} MoNet~\cite{Monti2016}
 
+\emph{patch operator} for a specific $k \in \{ 1, \ldots, K \}$
 \begin{equation*}
-  (\mathbf{f} \star \mathbf{g})(i) = \sum_{j \in \mathcal{V}}
+  D_k(i)f = \sum_{j \in \mathcal{N}(i)} w_k(\mathbf{u}(i, j)) f(j)
 \end{equation*}
 
+\begin{equation*}
+  (\mathbf{f} \star \mathbf{g})(i) = \sum_k^K D_k(i)f
+\end{equation*}
+where $K \in \mathbb{N}$ is the dimensionality of the extracted patch and $\mathbf{w}(\mathbf{u}) = (w_1(\mathbf{u}), \ldots, w_K(\mathbf{u}))$ is a weighting function parametrized by some learnable parameters.
+\\\\
+MoNet~\cite{Monti2016} suggests the use of a \emph{gaussian kernel}
+\begin{equation*}
+  w_k(\mathbf{u}) = \exp \left(-\frac{1}{2} {(\mathbf{u} - \mathbf{\mu}_k)}^{\top} {\mathrm{diag}(\mathbf{\sigma}_k)}^{-1} (\mathbf{\mu}_k - \mathbf{u}) \right)
+\end{equation*}
 
-awdawd
+as weighting functions with a diagonal covariance matrix $\mathrm{diag}(\mathbf{\sigma}_k) \in \mathbb{R}^{d \times d}$ and mean vector $\mathbf{\mu}_k \in \mathbb{R}^d$ which results in $2Kd$ learnable parameters for the patch operator.
+
+Advantages in domain-dependent choice of weighting function
+
+\paragraph{SplineNet}
+
+\begin{itemize}
+  \item define with polar coordinates
+  \item Erweiterung auf 3D
+  \item Insbesondere Gradienten beschreiben
+\end{itemize}
 
 \bibliographystyle{plain}
 \bibliography{bibliography}
