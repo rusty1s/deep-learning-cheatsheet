@@ -35,6 +35,20 @@ For a node $i \in \mathcal{V}$ its \emph{neighborhood} set is defined by $\mathc
 
 \section{Convolutions}
 
+\paragraph{Spectral CNN}
+
+\paragraph{Smooth Spectral CNN}
+
+\paragraph{ChebNet}
+
+\paragraph{GCN}
+
+\paragraph{Diffusion CNN (DCNN)}
+
+\paragraph{Geodesic CNN (GCNN)}
+
+\paragraph{Anisotropic CNN (ACNN)}
+
 \paragraph{MoNet}
 
 Let $\mathbf{u} \colon \mathcal{V} \times \mathcal{V} \to \mathbb{R}^d$ define a $d$-dimensional vector of \emph{pseudo-coordinates}.
@@ -53,6 +67,8 @@ MoNet~\cite{Monti2016} suggests the use of the \emph{gaussian kernel}
 \end{equation*}
 with the diagonal covariance matrix $\mathrm{diag}(\boldsymbol{\sigma}_k) \in \mathbb{R}^{d \times d}$ and mean vector $\boldsymbol{\mu}_k \in \mathbb{R}^d$, resulting in $2Kd$ learnable parameters.
 For arbitrary graphs one can choose the pseudo-coordinates to use the degrees of the nodes $\mathbf{u}(i,j) = \left( D_{ii}^{-1/2}, D_{jj}^{-1/2} \right)$, whereas one can take the polar coordinates $\mathbf{u} = (\rho, \varphi)$ respectively $\mathbf{u} = (r, \varphi, \theta)$ for 2D or 3d graph embeddings like discrete manifolds.
+
+\paragraph{SchNet}
 
 \paragraph{SplineNet}
 
@@ -100,6 +116,56 @@ If we further restrict $m = 1$, which leads to linear interpolation, we can reac
 \begin{itemize}
   \item Insbesondere Gradienten beschreiben
 \end{itemize}
+
+\section{Applications}
+
+\subsection{Images}
+
+Classification task on MNIST~\cite{mnist} and Cifar-10~\cite{cifar10}.
+MoNet uses superpixel-based approach with (fixed) 300, 150 and 75 vertices and no word on feature selection with 3 convolution layers and max pooling by a factor of four.
+superpixel barycenters and 25! gaussian kernels initialized with random means and variances for 63! epochs
+No word of runtime.
+Each Superpixel is connected with each other (lol).
+
+\subsection{Manifolds}
+
+Learning dense intrinsic correspondence between collections of 3D shapes represented as discrete manifolds, where one tries to label each vertex of a given query shape $\mathcal{X}$ with the index of a corresponding point on some reference shape $\mathcal{Y}$.
+Let $n$ and $m$ denote the number of vertices in $\mathcal{X}$ and $\mathcal{Y}$, respectively.
+For a point $x$ on a query shape, the last layer of the network is a soft-max, producing an $m$-dimensional output $f(x)$ interpreted as a probability distribution on $\mathcal{Y}$.
+
+\subsubsection{Shape correspondence}
+
+\paragraph{Meshes}
+
+FAUST humans dataset consisting of 100 watertight meshes representing $10$ different poses for $10$ different subjects with exact ground-truth correspondence.
+Each shape is represented as a mesh with $6890$ vertices.
+The first subject in first pose was used as the reference.
+For all the shapes, point-wise 544-dimensional SHOT descriptors were used as input data.
+MoNet architecture with 3 convolutional layers.
+First 80 subjects in all poses were used for training (800 shapes in total), the remaining 20 subjects were used for testing.
+The output of the network was refined using the intrinsic Bayesian filter in order to remove some local outliers.
+Correspondnce quality was evaluated using the Princeton benchmark, plotting the percentage of matches that are at most $r$-geodesically distant from the groundtruth correspondence on the reference shape.
+
+\paragraph{Range maps}
+
+Repeated shape correspondence experiment on range maps synthetically generated from FASUT meshes.
+For each subject and pose produced 10 rangemaps in $100 \times 180$ resolution, covering shape rotations around the $z$-axis with increments of $36$ degrees (total of $1000$ range maps).
+For comparision, we show the performance of a stanrard Euclidean CNN applied on raw depth values and on SHOT descriptors.
+
+\subsubsection{Shape retrieval}
+
+In the shape retrieval application, we are interested in producing a global shape descriptor that discrimnates between shape classes.
+
+\subsubsection{Invariant descriptors}
+
+Point-wise applying some input feature vector, the output can be regarded as a dense local descriptor at point $x$.
+Our goal is to make the output of the network as similar as possible at coresponding points (positives) across a collection of shapes, and as dissimilar as possible at non-corresponding points (negatives).
+For this purpose, we use a siamese network configuration and minimize the siamese loss.
+
+\paragraph{GCNN}
+
+also used the TOSCA dataset containing syntetic models of humans in a variety of near-isometric deformations.
+The meses in TOSCA were resamples to $10$K vertices.
 
 \bibliographystyle{plain}
 \bibliography{bibliography}
