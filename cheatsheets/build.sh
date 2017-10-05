@@ -1,6 +1,6 @@
 #!/bin/bash
 
-files=( convolutions autoencoders )
+files=( convolutions autoencoders applications )
 
 for name in "${files[@]}"; do
   pdflatex "$name"
