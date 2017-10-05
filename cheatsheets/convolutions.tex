@@ -17,11 +17,11 @@
 \section{Preliminaries}
 
 Let $\mathcal{G} = (\mathcal{V}, \mathcal{E}, \mathbf{W})$ be a \emph{weighted graph} with $\mathcal{V} = \{1, \ldots, n\}$, $\mathcal{E} \subseteq \mathcal{V} \times \mathcal{V}$ and \emph{adjacency matrix} $\mathbf{W} \in \mathbb{R}^{n \times n}$, where $W_{ij} > 0$ iff $(i, j) \in \mathcal{E}$ and $W_{ij} = 0$ iff $(i, j) \not\in \mathcal{E}$.
-Note that $\mathbf{W}$ is usually \emph{sparse} with $|\mathcal{E}| \ll n^2$.
+Note that $\mathbf{W}$ is usually \emph{sparse} with $|\mathcal{E}| \ll n^2$ entries.
 $\mathcal{G}$ is called \emph{undirected} iff $W_{ij} = W_{ji}$ for all $i,j \in \mathcal{V}$.
 We further assume that $\mathcal{G}$ contains no \emph{self-loops}, meaning $(i, i) \not\in \mathcal{E}$.
-$\mathbf{W}$ implies the diagonal \emph{degree matrix} $\mathbf{D} \in \mathbb{R}^{n \times n}$ with $D_{ii} = \sum_{j \in \mathcal{V}} W_{ij}$.
-For a node $i \in \mathcal{V}$ its neighborhood set is defined by $\mathcal{N}(i)$.
+$\mathbf{W}$ implies the diagonal \emph{degree matrix} $\mathbf{D} \in \mathbb{R}^{n \times n}$, where $D_{ii} = \sum_{j \in \mathcal{V}} W_{ij}$.
+For a node $i \in \mathcal{V}$ its \emph{neighborhood} set is defined by $\mathcal{N}(i)$.
 % \\\\
 
 % The \emph{unnormalized Laplacian} of an weighted undirected graph without self-loops is a $n \times n$ symmetric positive-semidefinite matrix $\mathbf{L} = \mathbf{D} - \mathbf{W}$, where $\mathbf{D} = \mathrm{diag}\left( \sum_{i \in \mathcal{V}} w_{ij}\right)$. (wrong syntax)
@@ -40,19 +40,19 @@ For a node $i \in \mathcal{V}$ its neighborhood set is defined by $\mathcal{N}(i
 Let $\mathbf{u} \colon \mathcal{V} \times \mathcal{V} \to \mathbb{R}^d$ define a $d$-dimensional vector of \emph{pseudo-coordinates}.
 \emph{MoNet}~\cite{Monti2016} then uses the generic \emph{patch operator}
 \begin{equation*}
-  D_k(i)f = \sum_{j \in \mathcal{N}(i)} w_k(\mathbf{u}(i, j)) f(j) k \in \{ 1, \ldots, K \}
+  D_k(i)f = \sum_{j \in \mathcal{N}(i)} w_k(\mathbf{u}(i, j)) f(j), \quad k \in \{ 1, \ldots, K \},
 \end{equation*}
-for the spatial definition of a convolution on a graph or manifold signal $f \colon \mathcal{V} \to \mathbb{R}$ respectively $\mathbf{f} \in \mathbb{R}^n$
+for the spatial definition of a convolution on a graph signal $f \colon \mathcal{V} \to \mathbb{R}$ respectively $\mathbf{f} \in \mathbb{R}^n$
 \begin{equation*}
-  (\mathbf{f} \star \mathbf{g})(i) = \sum_k^K D_k(i)f
+  (\mathbf{f} \star \mathbf{g})(i) = \sum_k^K D_k(i)f,
 \end{equation*}
-where $K \in \mathbb{N}$ is the dimensionality of the extracted patch and $\mathbf{w}(\mathbf{u}) \in \mathbb{R}^K$ with $\mathbf{w}(\mathbf{u}) = (w_1(\mathbf{u}), \ldots, w_K(\mathbf{u}))$ is a weighting function parametrized by some finite set of learnable parameters.
-MoNet~\cite{Monti2016} suggests the use of the weighted \emph{gaussian kernel}
+where $K \in \mathbb{N}$ is the dimensionality of the extracted patch and $\mathbf{w}(\mathbf{u}) = (w_1(\mathbf{u}), \ldots, w_K(\mathbf{u}))$ is a continuous kernel parametrized by some finite set of learnable parameters.
+MoNet~\cite{Monti2016} suggests the use of the \emph{gaussian kernel}
 \begin{equation*}
   w_k(\mathbf{u}) = \exp \left(-\frac{1}{2} {(\mathbf{u} - \boldsymbol{\mu}_k)}^{\top} {\mathrm{diag}(\boldsymbol{\sigma}_k)}^{-1} (\mathbf{u} - \boldsymbol{\mu}_k) \right)
 \end{equation*}
-with the diagonal covariance matrix $\mathrm{diag}(\boldsymbol{\sigma}_k) \in \mathbb{R}^{d \times d}$ and mean vector $\boldsymbol{\mu}_k \in \mathbb{R}^d$, which results in $2Kd$ learnable parameters for the patch operator.
-For arbitrary graphs one can choose the pseudo-coordinates to use the degrees of the nodes $\mathbf{u}(i,j) = \left( D_{ii}^{-1/2}, D_{jj}^{-1/2} \right)$, whereas one can take the polar coordinates $\mathbf{u} = (\rho, \varphi)$ respectively $\mathbf{u} = (r, \varphi, \theta)$ for 2D or 3d graph embeddings like manifolds.
+with the diagonal covariance matrix $\mathrm{diag}(\boldsymbol{\sigma}_k) \in \mathbb{R}^{d \times d}$ and mean vector $\boldsymbol{\mu}_k \in \mathbb{R}^d$, resulting in $2Kd$ learnable parameters.
+For arbitrary graphs one can choose the pseudo-coordinates to use the degrees of the nodes $\mathbf{u}(i,j) = \left( D_{ii}^{-1/2}, D_{jj}^{-1/2} \right)$, whereas one can take the polar coordinates $\mathbf{u} = (\rho, \varphi)$ respectively $\mathbf{u} = (r, \varphi, \theta)$ for 2D or 3d graph embeddings like discrete manifolds.
 
 \paragraph{SplineNet}
 
@@ -67,7 +67,7 @@ An \emph{open b-spline-function} $N_k^m$ over $k \in \{ 1, \ldots, K \}$ is recu
 
 A \emph{closed b-spline-function}
 
-We choose a different weighting function based on \emph{B-Splines} to make use of \emph{local controllable} filters and to reduce computation significantly~\cite{Fey2017}:
+We choose a different weight function based on \emph{B-Splines} to make use of \emph{local controllable} filters and to reduce computation significantly~\cite{Fey2017}:
 \begin{equation*}
   w_k(\rho, \varphi) = \mu_k \hat{\rho} \bar{N}_k^m(\varphi)
 \end{equation*}
