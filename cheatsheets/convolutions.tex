@@ -169,9 +169,34 @@ Whereas MoNet has a runtime dependent on $K$, which is typical the dominant fact
 Computing $N_k^m(\cdot)$ for all edges and all $k \in \{ 1, \ldots, K \}$ yields $K$ adjacency matrices with $(m + 1) |\mathcal{E}|$ entries combined.
 
 If we further restrict $m = 1$, which leads to linear interpolation, we can reach a runtime nearly independent of $K$ with $\mathcal{O}(K |\mathcal{E}| + M^{\mathrm{in}} M^{\mathrm{out}} |\mathcal{E}|)$ which is quite as fast as the GCN introduced by Kipf et al.\todo{cite}
+
+\newpage
+
+$n$ node count,
+$d$ dimensionality,
+$k$ partitions,
+$m$ b-spline degree which should be fixed to $1$,
+$y$ incoming features and
+$z$ outgoing features.
+\\
+$\mathbf{W} \in \mathbb{R}^{k \times y \times z}$,
+$\mathbf{F}^{\mathrm{in}} \in \mathbb{R}^{n \times y}$,
+$\mathbf{A} \in \mathbb{R}^{n \times n \times d}$ and
+$\mathbf{F}^{\mathrm{out}} \in \mathbb{R}^{n \times z}$.
+\\
+$N_i^m \colon [0, 2\pi] \to [0, 1]$ b-spline function with uniform node vector.
 \\\\
+For every $N_i^m$
+First, do some element-wise preprocessing on $\mathbf{A}$ resulting in $2(m + 1)$ new $\mathbf{B} \in \mathbb{R}^{n \times n \times (m+1) \times 2}$ adjaceny matrices.
 
 
+
+
+
+
+
+
+\newpage
 
 \todo{normalize by node degree}
 \todo{important: don't forget root nodes}
