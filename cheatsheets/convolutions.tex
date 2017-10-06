@@ -37,19 +37,50 @@ For a node $i \in \mathcal{V}$ its \emph{neighborhood} set is defined by $\mathc
 
 \paragraph{Spectral CNN}
 
+
+Spectral networks and locally connected networks on graphs
+Bruna et al 2014
+
 \paragraph{Smooth Spectral CNN}
+
+Deep convoltional networks on graph-structured data
+Henaff 2015
 
 \paragraph{ChebNet}
 
+Defferrard
+
 \paragraph{GCN}
+
+Kipf
 
 \paragraph{CayleyNet}
 
+Graph Convoltional neural networks with complex reational spectral filters
+Spectral CNN with complex rational filters
+Levie et al 2017
+
+\paragraph{Graph NN (GNN)}
+
+First neural net on graphs with the name
+A new model for learning in graph domains
+Gori, Monfardini
+
 \paragraph{Diffusion CNN (DCNN)}
+
+Atwood 2016
+Diffusion-convolutional neural networks
 
 \paragraph{Geodesic CNN (GCNN)}
 
+Geodesic convolution nueral networks on Riemannian manifolds
+First spatial CNN on manifolds
+Masci 2015
+
 \paragraph{Anisotropic CNN (ACNN)}
+
+Learning shape correspondence with anisotropic convoltional neural networks
+Boscaini 2015
 
 \paragraph{MoNet}
 
@@ -72,17 +103,36 @@ For arbitrary graphs one can choose the pseudo-coordinates to use the degrees of
 
 \paragraph{Localized SCNN}
 
+Learning class-specific descriptors for deformable shapes using localized spectral convolutional networks
+Boscaini 2015
+
 \paragraph{Spherical CNN}
+
+Deep learing 3D shape surfaces using geometry images
+CNN on spherical authalic parametrization
+Sinha 2016
 
 \paragraph{Toric CNN}
 
+Convoltional neural networks on surfaces via seamless toric covers
+CNN on planar flat-torus parametrization
+Maron 2017
+
+\paragraph{SyncSpecCNN}
+
+Spectal transformer networks
+CVPR
+Yi 2017
+SyncSpecCNN: Synchronized Spectral CNN for 3d Shape segmentation
+
 \paragraph{SchNet}
 
-\paragraph{GNN}
+NIPS 2017
+Schuett
+Modeling quantum interactions in molecules
+no edges, only points
 
-\paragraph{B-Spline GCN}
-
-nochmal was ganz anderes
+\paragraph{name?}
 
 Let $\xi = (t_0, \ldots, t_)$ be a node vector.
 An \emph{open b-spline-function} $N_k^m$ over $k \in \{ 1, \ldots, K \}$ is recursively defined by
@@ -119,6 +169,8 @@ Whereas MoNet has a runtime dependent on $K$, which is typical the dominant fact
 Computing $N_k^m(\cdot)$ for all edges and all $k \in \{ 1, \ldots, K \}$ yields $K$ adjacency matrices with $(m + 1) |\mathcal{E}|$ entries combined.
 
 If we further restrict $m = 1$, which leads to linear interpolation, we can reach a runtime nearly independent of $K$ with $\mathcal{O}(K |\mathcal{E}| + M^{\mathrm{in}} M^{\mathrm{out}} |\mathcal{E}|)$ which is quite as fast as the GCN introduced by Kipf et al.\todo{cite}
+\\\\
+
 
 
 \todo{normalize by node degree}
@@ -178,6 +230,11 @@ For this purpose, we use a siamese network configuration and minimize the siames
 
 also used the TOSCA dataset containing syntetic models of humans in a variety of near-isometric deformations.
 The meshes in TOSCA were resamples to $10$K vertices.
+
+\section{Multi graphs}
+
+was von monti 2017
+CNNs on multiple graphs and application to matrix completion
 
 \bibliographystyle{plain}
 \bibliography{bibliography}
