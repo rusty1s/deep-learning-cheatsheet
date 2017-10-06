@@ -43,6 +43,8 @@ For a node $i \in \mathcal{V}$ its \emph{neighborhood} set is defined by $\mathc
 
 \paragraph{GCN}
 
+\paragraph{CayleyNet}
+
 \paragraph{Diffusion CNN (DCNN)}
 
 \paragraph{Geodesic CNN (GCNN)}
@@ -68,9 +70,19 @@ MoNet~\cite{Monti2016} suggests the use of the \emph{gaussian kernel}
 with the diagonal covariance matrix $\mathrm{diag}(\boldsymbol{\sigma}_k) \in \mathbb{R}^{d \times d}$ and mean vector $\boldsymbol{\mu}_k \in \mathbb{R}^d$, resulting in $2Kd$ learnable parameters.
 For arbitrary graphs one can choose the pseudo-coordinates to use the degrees of the nodes $\mathbf{u}(i,j) = \left( D_{ii}^{-1/2}, D_{jj}^{-1/2} \right)$, whereas one can take the polar coordinates $\mathbf{u} = (\rho, \varphi)$ respectively $\mathbf{u} = (r, \varphi, \theta)$ for 2D or 3d graph embeddings like discrete manifolds.
 
+\paragraph{Localized SCNN}
+
+\paragraph{Spherical CNN}
+
+\paragraph{Toric CNN}
+
 \paragraph{SchNet}
 
-\paragraph{SplineNet}
+\paragraph{GNN}
+
+\paragraph{B-Spline GCN}
+
+nochmal was ganz anderes
 
 Let $\xi = (t_0, \ldots, t_)$ be a node vector.
 An \emph{open b-spline-function} $N_k^m$ over $k \in \{ 1, \ldots, K \}$ is recursively defined by
