@@ -51,6 +51,7 @@ General | [Graphs](graph.md)
 * [SqueezeNet: AlexNet-level accuracy with 50x fewer parameters and 0.5MB model size](https://arxiv.org/pdf/1602.07360.pdf)
 * [Spatial Pyramid Pooling in Deep Convolutional Networks for Visual Recognition](https://arxiv.org/pdf/1406.4729.pdf)
 * [Genrative Adversarial Networks (GANs): Engine and Applications](https://blog.statsbot.co/generative-adversarial-networks-gans-engine-and-applications-f96291965b47)
+* [GANs are Broken in More than One Way: The Numerics of GANs](http://www.inference.vc/my-notes-on-the-numerics-of-gans/)
 * [Dynamically Expandable Neural Networks](https://buzzrobot.com/dynamically-expandable-neural-networks-ce75ff2b69cf)
 
 ## Optimizer
