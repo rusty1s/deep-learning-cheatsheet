@@ -51,6 +51,7 @@ General | [Graphs](graph.md)
 * [SqueezeNet: AlexNet-level accuracy with 50x fewer parameters and 0.5MB model size](https://arxiv.org/pdf/1602.07360.pdf)
 * [Spatial Pyramid Pooling in Deep Convolutional Networks for Visual Recognition](https://arxiv.org/pdf/1406.4729.pdf)
 * [Genrative Adversarial Networks (GANs): Engine and Applications](https://blog.statsbot.co/generative-adversarial-networks-gans-engine-and-applications-f96291965b47)
+* [GANs are Broken in More than One Way: The Numerics of GANs](http://www.inference.vc/my-notes-on-the-numerics-of-gans/)
 * [Dynamically Expandable Neural Networks](https://buzzrobot.com/dynamically-expandable-neural-networks-ce75ff2b69cf)
 
 ## Optimizer
@@ -75,6 +76,7 @@ General | [Graphs](graph.md)
 ### Images
 
 * [MNIST](http://yann.lecun.com/exdb/mnist/)
+* [Fashion MNIST](https://github.com/zalandoresearch/fashion-mnist)
 * [CIFAR-10/100](http://www.cs.toronto.edu/%7Ekriz/cifar.html)
 * [STL-10](https://cs.stanford.edu/~acoates/stl10/)
 * [SVHN](http://ufldl.stanford.edu/housenumbers/)
@@ -82,6 +84,11 @@ General | [Graphs](graph.md)
   * [ILSVRC2014](http://image-net.org/challenges/LSVRC/2014/download-images-5jj5.php)
 * [Pascal VOC](http://host.robots.ox.ac.uk/pascal/VOC/)
 * [Animals with Attributes](https://cvml.ist.ac.at/AwA2/)
+
+### Meshes
+
+* [MPI FAUST Dataset](http://faust.is.tue.mpg.de/)
+* [Tosca](http://tosca.cs.technion.ac.il/book/resources_data.html)
 
 ## Classification
 
