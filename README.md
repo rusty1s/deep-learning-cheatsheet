@@ -50,9 +50,16 @@ General | [Graphs](graph.md)
 * [Very Deep Convolutional Networks for Large-Scale Image Recognition](https://arxiv.org/pdf/1409.1556v6.pdf) [VGG]
 * [SqueezeNet: AlexNet-level accuracy with 50x fewer parameters and 0.5MB model size](https://arxiv.org/pdf/1602.07360.pdf)
 * [Spatial Pyramid Pooling in Deep Convolutional Networks for Visual Recognition](https://arxiv.org/pdf/1406.4729.pdf)
-* [Genrative Adversarial Networks (GANs): Engine and Applications](https://blog.statsbot.co/generative-adversarial-networks-gans-engine-and-applications-f96291965b47)
-* [GANs are Broken in More than One Way: The Numerics of GANs](http://www.inference.vc/my-notes-on-the-numerics-of-gans/)
 * [Dynamically Expandable Neural Networks](https://buzzrobot.com/dynamically-expandable-neural-networks-ce75ff2b69cf)
+
+### AutoEncoder and GANs
+
+* [Generative Adversarial Networks (GANs): Engine and Applications](https://blog.statsbot.co/generative-adversarial-networks-gans-engine-and-applications-f96291965b47)
+* [GANs are Broken in More than One Way: The Numerics of GANs](http://www.inference.vc/my-notes-on-the-numerics-of-gans/)
+* [Towards data set augmentation with GANs](https://medium.com/towards-data-science/towards-data-set-augmentation-with-gans-9dd64e9628e6)
+* [How does the unpooling and deconvolution work in DeConvNet](https://stackoverflow.com/questions/35049197/how-does-the-unpooling-and-deconvolution-work-in-deconvnet)
+* [What are deconvoltional layers?](https://datascience.stackexchange.com/questions/6107/what-are-deconvolutional-layers)
+* [Visualizing and Understanding Convolutional Networks](https://arxiv.org/pdf/1311.2901v3.pdf) [Original Unpooling Paper]
 
 ## Optimizer
 
