@@ -132,7 +132,7 @@ Schuett
 Modeling quantum interactions in molecules
 no edges, only points
 
-\paragraph{name?}
+\subsection{SplineConv}
 
 % Let $\xi = (t_0, \ldots, t_)$ be a node vector.
 % An \emph{open b-spline-function} $N_k^m$ over $k \in \{ 1, \ldots, K \}$ is recursively defined by
@@ -194,14 +194,42 @@ respectively
   w_{ij}(\rho, \varphi, \theta) = \mu_{ij} \hat{\rho} \bar{N}_i^m(\varphi) \bar{N}_j^m(\theta),
 \end{equation*}
 where the radius $\rho$ is inverted by the \emph{gaussian function} $\hat{\rho} = \exp(\frac{\rho^2}{2\sigma^2})$.
-For an additional parametrization of $\rho$ one can also replace $\hat{\rho}$ with the corresponding b-spline functions resulting in
+For an additional parametrization of $\rho$ one can also replace $\hat{\rho}$ with the corresponding b-spline function resulting in
 \begin{equation*}
   w_{ijk}(\rho, \varphi, \theta) = \mu_{ijk} N_i^m(\hat{\rho}) \bar{N}_j^m(\varphi) \bar{N}_k^m(\theta).
 \end{equation*}
 \\\\
 Index-Notation nicht korrekt ($k$ wird hier als Index benutzt, $i$ und $j$ eigl reserviert fuer Knoten)
 $\mu$ muss eigl ab zwei Indizes auch gross geschrieben werden
-\\\\
+
+\paragraph{Efficient parallel computing}
+
+For each edge in $\mathbf{A} \in \mathbb{R}^{n \times n \times d}$ there exists $m + 1$ b-spline values $\bar{N}_i^m(\varphi) \neq 0, i = 1, \ldots, k$.
+Stimmt das auch fuer offene b-spline-Funktionen?
+Hence, we can compute $\mathbf{B} \in {[0, 1]}^{n \times n \times d \times m + 1}$ as an equally dense matrix of $\mathbf{A}$ containing the b-spline values $\neq 0$, and a corresponding index matrix $\mathbf{C} \in {\{ 1, \ldots, k \}}^{n \times n \times d \times m + 1}$ containing the indices of the b-spline-functions $\neq 0$.
+Each $N_i^m$ respectively $\bar{N}_i^m$ can be computed element-wise in $\mathcal{O}(1)$ (stimmt das auch fuer hoehere $m$?) resulting in a runtime of $\mathcal{O}(dm|\mathcal{E}|)$, where $d \in \{2,3\}$ and typically $m \in \{1, 2\}$ are quite low numbered.
+
+The convolution operator $(\mathbf{F} \star \mathbf{W}) \colon \mathbb{R}^{n \times y} \to \mathbb{R}^{n \times z}$ can therefore be computed as following:
+\begin{enumerate}
+  \item Compute $\mathbf{B} \in \mathbb{R}^{n \times n \times m + 1}$ respectively $\mathbf{C} \in \mathbb{R}^{n \times n \times m + 1}$ (ich hab das mal auf $d = 1$ begrenzt)
+  \item
+  \item Allocate a zero-filled matrix $\mathbf{F}^{\mathrm{out}} \in \mathbb{R}^{n \times z}$.
+  \item For every edge $(i, j) \in \mathcal{E}$ do the following:
+  \begin{enumerate}
+    \item $F^{\mathrm{out}}_i \rightarrow F^{\mathrm{out}}_i + \sum_a^{m+1} B_{ija} F^{\mathrm{in}}_j W_{C_{ija}}$
+  \end{enumerate}
+\end{enumerate}
+Note that the convolution operator is particularly independent of the number of partitions $k$, resulting in a very fast approach nearly competing with the runtime of the convolution operator from Kipf et al.\ by being far more powerful on discrete manifolds.
+
+For batch-wise convolutions one can interpret the batch of adjacency matrices $\{ \mathbf{A}_1, \ldots, \mathbf{A}_b \}$ as one adjacency matrix
+\begin{equation*}
+  \mathbf{A} = \begin{bmatrix}
+    \mathbf{A}_1 & & \\
+    & \ddots &  \\
+    & & \mathbf{A}_b
+  \end{bmatrix}.
+\end{equation*}
+
 % For every $N_i^m$
 % First, do some element-wise preprocessing on $\mathbf{A}$ resulting in $2(m + 1)$ new $\mathbf{B} \in \mathbb{R}^{n \times n \times (m+1) \times 2}$ adjaceny matrices.
 
