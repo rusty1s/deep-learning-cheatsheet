@@ -216,7 +216,7 @@ The convolution operator $(\mathbf{F} \star \mathbf{W}) \colon \mathbb{R}^{n \ti
   \item Allocate a zero-filled matrix $\mathbf{F}^{\mathrm{out}} \in \mathbb{R}^{n \times z}$.
   \item For every edge $(i, j) \in \mathcal{E}$ do the following:
   \begin{enumerate}
-    \item $F^{\mathrm{out}}_i \rightarrow F^{\mathrm{out}}_i + \sum_a^{m+1} B_{ija} W_{C_{ija}} F^{\mathrm{in}}_j$
+    \item $F^{\mathrm{out}}_i \leftarrow F^{\mathrm{out}}_i + \sum_a^{m+1} B_{ija} W_{C_{ija}} F^{\mathrm{in}}_j$
   \end{enumerate}
 \end{enumerate}
 Note that the convolution operator is particularly independent of the number of partitions $k$, resulting in a very fast approach nearly competing with the runtime of the convolution operator from Kipf et al.\ by being far more powerful on discrete manifolds.
