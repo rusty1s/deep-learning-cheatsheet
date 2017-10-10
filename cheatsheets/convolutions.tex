@@ -212,7 +212,6 @@ Each $N_i^m$ respectively $\bar{N}_i^m$ can be computed element-wise in $\mathca
 The convolution operator $(\mathbf{F} \star \mathbf{W}) \colon \mathbb{R}^{n \times y} \to \mathbb{R}^{n \times z}$ can therefore be computed as following:
 \begin{enumerate}
   \item Compute $\mathbf{B} \in \mathbb{R}^{n \times n \times m + 1}$ respectively $\mathbf{C} \in \mathbb{R}^{n \times n \times m + 1}$ (ich hab das mal auf $d = 1$ begrenzt)
-  \item
   \item Allocate a zero-filled matrix $\mathbf{F}^{\mathrm{out}} \in \mathbb{R}^{n \times z}$.
   \item For every edge $(i, j) \in \mathcal{E}$ do the following:
   \begin{enumerate}
