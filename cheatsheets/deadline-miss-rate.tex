@@ -1,0 +1,30 @@
+\documentclass[pdftex,10pt,a4paper]{scrartcl}
+
+\usepackage[a4paper,left=2.5cm,right=2.5cm,bottom=3cm,top=3cm]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{url}
+\usepackage[numbers,sort]{natbib}
+\parindent=0cm
+
+\title{Deadline Miss Rate Analysis}
+\date{\vspace{-5ex}}
+
+\begin{document}
+
+\maketitle
+
+\section{Modelling}
+
+Hardware architecture is modelled as a set of processors $P_1, \ldots, P_m$, a set of buses, and the corresponding interconnection topology.
+The application is modelled as a set of tasks $\tau_1, \ldots, \tau_n$.
+Each task $\tau_i$ is characterized by its period $\pi_i$, its deadline $\delta_i$, its priority, its mapping $m(\tau_i)$, i.e.\ the processor on which every job of task $\tau_i$ executes, and its execution time probability density function (ETPDF) $\epsilon_i$.
+The execution times of any two jobs (of the same or of different tasks) are assumend statistically independent.
+There may exist data dependencies among the tasks.
+
+\section{Problem}
+
+Given a hardware architecture and an application under the assumptions
+
+
+
+\end{document}
