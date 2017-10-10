@@ -134,43 +134,43 @@ no edges, only points
 
 \paragraph{name?}
 
-Let $\xi = (t_0, \ldots, t_)$ be a node vector.
-An \emph{open b-spline-function} $N_k^m$ over $k \in \{ 1, \ldots, K \}$ is recursively defined by
-\begin{equation*}
-  N_k^0(t) = \begin{cases}
-    1 & \text{if } t \in [t_k, t_{k+1})\\
-    0 & \text{else}
-  \end{cases}
-\end{equation*}
+% Let $\xi = (t_0, \ldots, t_)$ be a node vector.
+% An \emph{open b-spline-function} $N_k^m$ over $k \in \{ 1, \ldots, K \}$ is recursively defined by
+% \begin{equation*}
+%   N_k^0(t) = \begin{cases}
+%     1 & \text{if } t \in [t_k, t_{k+1})\\
+%     0 & \text{else}
+%   \end{cases}
+% \end{equation*}
 
-A \emph{closed b-spline-function}
+% A \emph{closed b-spline-function}
 
-We choose a different weight function based on \emph{B-Splines} to make use of \emph{local controllable} filters and to reduce computation significantly~\cite{Fey2017}:
-\begin{equation*}
-  w_k(\rho, \varphi) = \mu_k \hat{\rho} \bar{N}_k^m(\varphi)
-\end{equation*}
-with $\boldsymbol{\mu} = (\mu_1, \ldots, \mu_K )$ learnable parameters where $\bar{N}_k^m$ is a closed b-spline-function of degree $m \in \mathbb{N}$ with uniform node vector over the interval $[0, 2\pi]$ and $\hat{\rho} = \exp(\frac{\rho^2}{2\sigma^2})$.
-\todo{emerging signal processing cite for gaussian}
+% We choose a different weight function based on \emph{B-Splines} to make use of \emph{local controllable} filters and to reduce computation significantly~\cite{Fey2017}:
+% \begin{equation*}
+%   w_k(\rho, \varphi) = \mu_k \hat{\rho} \bar{N}_k^m(\varphi)
+% \end{equation*}
+% with $\boldsymbol{\mu} = (\mu_1, \ldots, \mu_K )$ learnable parameters where $\bar{N}_k^m$ is a closed b-spline-function of degree $m \in \mathbb{N}$ with uniform node vector over the interval $[0, 2\pi]$ and $\hat{\rho} = \exp(\frac{\rho^2}{2\sigma^2})$.
+% \todo{emerging signal processing cite for gaussian}
 
-We can also use the Tensorproduktkonstruktion to also parametrize the distances via\todo{lol}
-\begin{equation*}
-  w_{kl}(\rho, \varphi) = \mu_{kl} N_k^m(\hat{\rho}) \bar{N}_l^m(\varphi)
-\end{equation*}
-where we combine open and closed b-spline functions.
+% We can also use the Tensorproduktkonstruktion to also parametrize the distances via\todo{lol}
+% \begin{equation*}
+%   w_{kl}(\rho, \varphi) = \mu_{kl} N_k^m(\hat{\rho}) \bar{N}_l^m(\varphi)
+% \end{equation*}
+% where we combine open and closed b-spline functions.
 
-To modify it to the 3-dimenional space, one can use the polar coordinates $(\rho, \varphi, \theta)$ to
-\begin{equation*}
-  w_{klq}(\rho, \varphi, \theta) = \mu_{klm} N_k^m(\hat{\rho}) \bar{N}_l^m(\varphi) \bar{N}_q^m(\theta)
-\end{equation*}
+% To modify it to the 3-dimenional space, one can use the polar coordinates $(\rho, \varphi, \theta)$ to
+% \begin{equation*}
+%   w_{klq}(\rho, \varphi, \theta) = \mu_{klm} N_k^m(\hat{\rho}) \bar{N}_l^m(\varphi) \bar{N}_q^m(\theta)
+% \end{equation*}
 
-The good thing is the runtime.
-Whereas MoNet has a runtime dependent on $K$, which is typical the dominant factor between $d$ and $K$, this method is mostly dependent on $M$, which is typical low ($1$ or $2$).
+% The good thing is the runtime.
+% Whereas MoNet has a runtime dependent on $K$, which is typical the dominant factor between $d$ and $K$, this method is mostly dependent on $M$, which is typical low ($1$ or $2$).
 
-Computing $N_k^m(\cdot)$ for all edges and all $k \in \{ 1, \ldots, K \}$ yields $K$ adjacency matrices with $(m + 1) |\mathcal{E}|$ entries combined.
+% Computing $N_k^m(\cdot)$ for all edges and all $k \in \{ 1, \ldots, K \}$ yields $K$ adjacency matrices with $(m + 1) |\mathcal{E}|$ entries combined.
 
-If we further restrict $m = 1$, which leads to linear interpolation, we can reach a runtime nearly independent of $K$ with $\mathcal{O}(K |\mathcal{E}| + M^{\mathrm{in}} M^{\mathrm{out}} |\mathcal{E}|)$ which is quite as fast as the GCN introduced by Kipf et al.\todo{cite}
+% If we further restrict $m = 1$, which leads to linear interpolation, we can reach a runtime nearly independent of $K$ with $\mathcal{O}(K |\mathcal{E}| + M^{\mathrm{in}} M^{\mathrm{out}} |\mathcal{E}|)$ which is quite as fast as the GCN introduced by Kipf et al.\todo{cite}
 
-\newpage
+% \newpage
 
 $n$ node count,
 $d$ dimensionality,
@@ -184,10 +184,26 @@ $\mathbf{F}^{\mathrm{in}} \in \mathbb{R}^{n \times y}$,
 $\mathbf{A} \in \mathbb{R}^{n \times n \times d}$ and
 $\mathbf{F}^{\mathrm{out}} \in \mathbb{R}^{n \times z}$.
 \\
-$N_i^m \colon [0, 2\pi] \to [0, 1]$ b-spline function with uniform node vector.
+Let $N_i^m \colon [0, 1] \to [0, 1]$ be an open and $\bar{N}_i^m \colon [0, 2\pi] \to [0, 1]$ be a closed b-spline function with uniform node vectors.
+We can redefine the kernel $\mathbf{w}(\mathbf{u})$ of the patch operator $D_k(i)f$ used in MoNet using localized b-spline functions as
+\begin{equation*}
+  w_i(\rho, \varphi) = \mu_i \hat{\rho} \bar{N}_i^m(\varphi)
+\end{equation*}
+respectively
+\begin{equation*}
+  w_{ij}(\rho, \varphi, \theta) = \mu_{ij} \hat{\rho} \bar{N}_i^m(\varphi) \bar{N}_j^m(\theta),
+\end{equation*}
+where the radius $\rho$ is inverted by the \emph{gaussian function} $\hat{\rho} = \exp(\frac{\rho^2}{2\sigma^2})$.
+For an additional parametrization of $\rho$ one can also replace $\hat{\rho}$ with the corresponding b-spline functions resulting in
+\begin{equation*}
+  w_{ijk}(\rho, \varphi, \theta) = \mu_{ijk} N_i^m(\hat{\rho}) \bar{N}_j^m(\varphi) \bar{N}_k^m(\theta).
+\end{equation*}
 \\\\
-For every $N_i^m$
-First, do some element-wise preprocessing on $\mathbf{A}$ resulting in $2(m + 1)$ new $\mathbf{B} \in \mathbb{R}^{n \times n \times (m+1) \times 2}$ adjaceny matrices.
+Index-Notation nicht korrekt ($k$ wird hier als Index benutzt, $i$ und $j$ eigl reserviert fuer Knoten)
+$\mu$ muss eigl ab zwei Indizes auch gross geschrieben werden
+\\\\
+% For every $N_i^m$
+% First, do some element-wise preprocessing on $\mathbf{A}$ resulting in $2(m + 1)$ new $\mathbf{B} \in \mathbb{R}^{n \times n \times (m+1) \times 2}$ adjaceny matrices.
 
 
 
