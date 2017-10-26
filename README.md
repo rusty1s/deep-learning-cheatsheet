@@ -44,6 +44,7 @@ General | [Graphs](graph.md)
 ### PyTorch
 
 * [Official](http://pytorch.org/)
+* [PyTorch Examples](https://github.com/jcjohnson/pytorch-examples)
 
 ## Architectures
 

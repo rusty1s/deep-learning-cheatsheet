@@ -38,6 +38,10 @@
 * [Graph image representation from convolutional neural networks](https://www.google.ch/patents/US9418458)
 * [Dynamic Graph Convolutional Networks](https://arxiv.org/pdf/1704.06199.pdf)
 
+#### Autoencoder
+
+* [Automatic chemical design using a data-driven continuous representation of molecules](https://arxiv.org/pdf/1610.02415.pdf)
+
 ### Propagation rules
 
 * **SGCNN (Spectral Graph Convolutional Neural Network):**
