@@ -16,7 +16,7 @@
 * [Geometric deep learning on graphs and manifolds using mixture model CNNs](https://arxiv.org/pdf/1611.08402.pdf)
 * [Geodesic convolutional neural networks on Riemannian manifolds](https://arxiv.org/pdf/1501.06297.pdf)
 * [Geometric deep learning on graphs](https://www.dropbox.com/s/4l6m32tg9yecvow/CVPR%20GDL.pdf?dl=0) [Slides (228MB)]
-* [Robust Spatial Filtering with Graph Convolutional Neural Networks](https://arxiv.org/pdf/1703.00792.pdf) (Graph-CNNS + Graph Embed Pooling)
+* [Robust Spatial Filtering with Graph Convolutional Neural Networks](https://arxiv.org/pdf/1703.00792.pdf) (Graph-CNNS + Graph Embed Pooling) [[Code](https://github.com/fps7806/Graph-CNN)]
 
 ## Spectral Approach
 
