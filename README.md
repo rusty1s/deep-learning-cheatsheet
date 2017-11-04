@@ -20,7 +20,7 @@ General | [Graphs](graph.md)
 * [Applied Deep Learning](https://medium.com/towards-data-science/applied-deep-learning-part-1-artificial-neural-networks-d7834f67a4f6)
 * [Machine Learning is Fun!](https://medium.com/@ageitgey/machine-learning-is-fun-80ea3ec3c471) [Medium Series]
 * [Machine Learning for Humans](https://medium.com/machine-learning-for-humans) [Medium Series]
-* [Mz Neural network ins't working! What should I do?](http://theorangeduck.com/page/neural-network-not-working)
+* [My Neural network ins't working! What should I do?](http://theorangeduck.com/page/neural-network-not-working)
 * [The math of neural networks](http://himarsh.org/the-math-neural-networks/)
 * [Everything you need to know about Neural Networks](https://hackernoon.com/everything-you-need-to-know-about-neural-networks-8988c3ee4491)
 
