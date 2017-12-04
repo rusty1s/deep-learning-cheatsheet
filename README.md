@@ -47,6 +47,10 @@ General | [Graphs](graph.md)
 * [Official](http://pytorch.org/)
 * [PyTorch Examples](https://github.com/jcjohnson/pytorch-examples)
 
+# Conferences
+
+* [ICLR 2018](https://chillee.github.io/OpenReviewExplorer/)
+
 ## Architectures
 
 * [Very Deep Convolutional Networks for Large-Scale Image Recognition](https://arxiv.org/pdf/1409.1556v6.pdf) [VGG]
