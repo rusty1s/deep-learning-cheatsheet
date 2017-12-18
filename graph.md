@@ -47,6 +47,10 @@
 * [Learning Graphical State Transitions](http://www.hexahedria.com/files/2017learninggraphical.pdf)
 * [GRASS: Generative Recursive Autoencoders for Shape Structure](https://arxiv.org/abs/1705.02090) [[Reddit](https://www.reddit.com/r/MachineLearning/comments/7j70n8/r_grass_generative_recursive_autoencoders_for/)]
 
+#### RNNs
+
+* [Structural-RNN: Deep Learning on Spatio-Temporal Graphs](http://cvgl.stanford.edu/papers/jain_cvpr16.pdf)
+
 ### Propagation rules
 
 * **SGCNN (Spectral Graph Convolutional Neural Network):**
