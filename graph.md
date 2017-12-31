@@ -76,6 +76,7 @@ $$
 * **AGNN (Attention-based Graph Neural Network):** [Link](https://openreview.net/forum?id=rJg4YGWRb)
   * introdues in addition to GCN an additional scalar parameter $\beta$ to allow for an dynamic (changes over the layers with differing $\beta$) and adaptive (learns to weight more relevant neighbors higher)
   * $P_{ij}^{\beta^{(t)}} = \mathrm{softmax}(\beta^{(t)} \cos(H_i^{(t)}, H_j^{(t)}))$ for $j \in \mathcal{N}(i) \cup \lbrace i \rbrace$
+
 $$
 H^{(t+1)} = P^{\beta^{(t)}} + H^{(t)}
 $$
