@@ -43,6 +43,7 @@
 * [Automatic chemical design using a data-driven continuous representation of molecules](https://arxiv.org/pdf/1610.02415.pdf)
 * [Variational Graph Auto-Encoders](https://arxiv.org/abs/1611.07308)
 * [GraphVAE: Towards Generation of Small Graphs Using Variational Autoencoders](https://openreview.net/forum?id=SJlhPMWAW)
+  * Graphs with varying nodes decoded and encoded to graphs with $K$ nodes and a graph matching algorithm for reconstruction loss
 * [Learnign Deep Generative Models of Graphs](https://openreview.net/forum?id=Hy1d-ebAb)
 * [Learning Graphical State Transitions](http://www.hexahedria.com/files/2017learninggraphical.pdf)
 * [GRASS: Generative Recursive Autoencoders for Shape Structure](https://arxiv.org/abs/1705.02090) [[Reddit](https://www.reddit.com/r/MachineLearning/comments/7j70n8/r_grass_generative_recursive_autoencoders_for/)]
