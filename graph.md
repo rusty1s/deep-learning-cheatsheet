@@ -2,6 +2,10 @@
 
 [General](README.md) | Graphs
 
+## Videos
+
+* [New Deep Learning Techniques (Bresson, Monti, Bruna, Bronstein)](http://www.ipam.ucla.edu/programs/workshops/new-deep-learning-techniques/?tab=schedule)
+
 ## Introduction
 
 * [How do I generalize convolution of neural networks to graphs?](https://www.quora.com/How-do-I-generalize-convolution-of-neural-networks-to-graphs) [Spatial vs. Spectral]
